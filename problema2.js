@@ -4,21 +4,9 @@ var cad;
 var cad2;
 rl.on('line', (input) => {
     cad = input.trim();
-    var i;
-    for (i = 0; i < cad.length; i++){
-        if(cad[i] == '('){
-            break;
-        }
-    }
-    if (i == cad.length){
-        console.log("cad1: " + cad);
-    }
-    else{
         cad2 = reverseString(cad);
         cad2 = cad2.split("").reverse().join("");
         console.log("cad: " + cad2);
-    }
-    //console.log(fac(4));
     process.exit();
 })
 function reverseString(str){
