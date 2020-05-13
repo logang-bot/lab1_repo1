@@ -15,10 +15,10 @@ rl.on('line', (input) => {
     }
     else{
         cad2 = reverseString(cad);
+        cad2 = cad2.split("").reverse().join("");
         console.log("cad: " + cad2);
     }
     //console.log(fac(4));
-    //cad2 = cad2.split("").reverse().join("");
     process.exit();
 })
 function reverseString(str){
@@ -27,25 +27,20 @@ function reverseString(str){
     for (var i = 0; i < str.length; i++){
         console.log(str[i]+" "+i+" "+str.length);
         if (str[i] == '('){
+            //fl = true;
             //console.log("d");
             str = str.replace(str[i],'');
-            return str.substring(0,i) + reverseString(str.substring(i));    
+            return reverseString(str.substring(0,i) + reverseString(str.substring(i)));
+            //return str.substring(0,i) + reverseString(str.substring(i));    
         }
         if (str[i] == ')'){
             str = str.replace(str[i],'');
-            return reverseString(str.substring(0, i)) + str.substring(i);
+            return reverseString(str.substring(0, i))+ str.substring(i);
+            //return reverseString(str.substring(0, i)) + reverseString(str.substring(i));
         }
     }
     str2 = str.split("").reverse().join("");
     return str2;
 }
-/*function rev(s){
-    str2 = str.split("").reverse().join("");
-    return str2;
-}
-function fac(num){
-    if(num==0)
-        return 1;
-    return num * fac(num-1);
-}*/
+
 
