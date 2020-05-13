@@ -11,18 +11,16 @@ rl.on('line', (input) => {
 })
 function reverseString(str){
     for (var i = 0; i < str.length; i++){
-        console.log(str[i]+" "+i+" "+str.length);
+        //console.log(str[i]+" "+i+" "+str.length);
         if (str[i] == '('){
-            str = str.replace(str[i],'');
-            return reverseString(str.substring(0,i) + reverseString(str.substring(i)));    
+            //str = str.replace(str[i],'');
+            return reverseString(str.substring(0,i) + reverseString(str.substring(i+1)));    
         }
         if (str[i] == ')'){
-            str = str.replace(str[i],'');
-            return reverseString(str.substring(0, i))+ str.substring(i);
+            //str = str.replace(str[i],'');
+            return reverseString(str.substring(0, i))+ str.substring(i+1);
         }
     }
     str2 = str.split("").reverse().join("");
     return str2;
 }
-
-
