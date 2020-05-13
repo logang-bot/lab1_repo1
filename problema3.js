@@ -8,8 +8,7 @@ rl.on('line', (input) => {
     process.exit();
 })
 function chek(str){
-    var l,l2,im,p;
-    l2 = str.length;
+    var l,im,p;
     if(str.length%2 == 1) l = parseInt(str.length/2)+1;
     else l = str.length/2;
     im = p = 0;
