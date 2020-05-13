@@ -8,10 +8,10 @@ rl.on('line', (input) => {
     process.exit();
 })
 function chek(str){
-    var l,im,p;
+    var l,im;
     if(str.length%2 == 1) l = parseInt(str.length/2)+1;
     else l = str.length/2;
-    im = p = 0;
+    im = 0;
     var str2 = str;
     for(var i = 0; i<str2.length; i++){
         var c = 1;
@@ -19,20 +19,12 @@ function chek(str){
             if(str2[i] == str2[j]){
                 c++;
                 str2 = str2.substring(0,j)+str2.substring(j+1);
-                //console.log(str2 + " " + j + " " + str2[j]);
                 j--;
             }
         }
-        if(i>l-1){
-            //console.log("-- " + i + " " + l + " " + str2.length + " " + str2);
-            return false;
-        }
-        if(c%2 == 0) p++;
-        else im++;
+        if(i>l-1) return false;
+        if(c%2 != 0) im++;
     }
-    if(im>1){
-        //console.log("---- " + im + " " + l + " " + l2);
-        return false;
-    } 
+    if(im>1) return false;
     else return true;
 }
