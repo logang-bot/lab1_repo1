@@ -5,7 +5,7 @@ var n=0;
 
 rl.on('line', (input) => {
     if(input.trim() === ''){
-        console.log("valor: " + n);
+        //console.log("valor: " + n);
         for (var i = 0; i<inpArr.length; i++){
             if (inpArr[i].length>=n){
                 console.log(inpArr[i] + " ");
